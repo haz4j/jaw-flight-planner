@@ -1,0 +1,13 @@
+{
+  "name": "plain-tickets-parser",
+  "version": "1.0.0",
+  "description": "Веб-сборщик Open Jaw маршрутов Москва ↔ Китай (Travelpayouts cache)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "private": true
+}

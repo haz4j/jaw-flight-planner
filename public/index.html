@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Open Jaw — Москва ↔ Китай</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page">
+      <header class="header">
+        <h1>Open Jaw в Китай</h1>
+        <p class="subtitle">
+          Составные маршруты Москва → Китай → Москва. Результаты из кэша
+          Travelpayouts, сортировка по цене.
+        </p>
+      </header>
+
+      <section class="card" aria-labelledby="form-title">
+        <h2 id="form-title">Новый поиск</h2>
+        <form id="search-form">
+          <fieldset>
+            <legend>Дата старта</legend>
+            <div class="row">
+              <label>
+                с
+                <input type="date" name="startFrom" required />
+              </label>
+              <label>
+                по
+                <input type="date" name="startTo" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Дата возврата</legend>
+            <div class="row">
+              <label>
+                с
+                <input type="date" name="returnFrom" required />
+              </label>
+              <label>
+                по
+                <input type="date" name="returnTo" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Продолжительность в Китае (дни)</legend>
+            <div class="row">
+              <label>
+                с
+                <input type="number" name="durationFrom" min="1" max="60" required />
+              </label>
+              <label>
+                по
+                <input type="number" name="durationTo" min="1" max="60" required />
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Пересадки</legend>
+            <div class="row">
+              <label>
+                Макс. количество пересадок
+                <input type="number" name="maxTransfers" min="0" max="3" required />
+              </label>
+              <label>
+                Макс. пересадка (часы)
+                <input type="number" name="maxLayoverHours" min="0" max="48" required />
+                <span class="hint"
+                  >Сохраняется в истории; строгая проверка сегментов в кэше
+                  недоступна</span
+                >
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="actions">
+            <button type="submit" id="submit-btn">Запустить поиск</button>
+            <p id="form-message" class="message" hidden></p>
+          </div>
+        </form>
+      </section>
+
+      <section class="card" aria-labelledby="history-title">
+        <div class="history-head">
+          <h2 id="history-title">История поисков</h2>
+          <button type="button" id="refresh-btn" class="ghost">Обновить</button>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Запуск</th>
+                <th>Параметры</th>
+                <th>Статус</th>
+                <th>Результат</th>
+              </tr>
+            </thead>
+            <tbody id="history-body">
+              <tr>
+                <td colspan="4" class="empty">Загрузка…</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+    <script src="/app.js"></script>
+  </body>
+</html>
